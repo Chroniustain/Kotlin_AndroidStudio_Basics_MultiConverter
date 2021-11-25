@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/unit_to_convert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Unit to Convert"
+        android:inputType="numberDecimal"
+        android:layout_marginTop=""
+        android:layout_marginStart="120dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/what_conversion_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please pick the conversion of your choice."
+        android:layout_marginTop="20dp"
+        android:layout_marginStart=""
+        app:layout_constraintTop_toBottomOf="@id/unit_to_convert"
+        app:layout_constraingtStart_toStartOf="parent"/>
+
+    <RadioGroup
+        android:id="@+id/conversion_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:checkedButton="@id/option_pound_kilogram"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/what_conversion_type"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/option_pound_kilogram"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Pound to Kilogram"/>
+
+        <RadioButton
+            android:id="@+id/option_foot_meter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Foot to Meter"/>
+
+        <RadioButton
+            android:id="@+id/option_gallon_liter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Gallon to Liter"/>
+
+        <RadioButton
+            android:id="@+id/option_ounce_gram"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Ounce to Gram"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/convert_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Convert"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/conversion_options"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/conversion_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Result of Conversion:"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="130dp"
+        app:layout_constraintTop_toBottomOf="@id/convert_button"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
