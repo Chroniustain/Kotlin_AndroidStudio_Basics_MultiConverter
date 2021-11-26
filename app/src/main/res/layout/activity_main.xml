@@ -11,18 +11,19 @@
         android:id="@+id/unit_to_convert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Unit to Convert"
+        android:hint="@string/unit_to_convert"
         android:inputType="numberDecimal"
         android:layout_marginTop="60dp"
         android:layout_marginStart="120dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="insert a number" />
 
     <TextView
         android:id="@+id/what_conversion_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please pick the conversion of your choice."
+        android:text="@string/conversion_options_selection"
         android:layout_marginTop="70dp"
         android:layout_marginStart="1dp"
         app:layout_constraintTop_toBottomOf="@id/unit_to_convert"
@@ -42,28 +43,28 @@
             android:id="@+id/option_pound_kilogram"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Pound to Kilogram"
+            android:text="@string/pound_to_kilogram_option"
             android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/option_foot_meter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Foot to Meter"
+            android:text="@string/foot_to_meter_option"
             android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/option_gallon_liter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Gallon to Liter"
+            android:text="@string/gallon_to_liter_option"
             android:textSize="20sp"/>
 
         <RadioButton
             android:id="@+id/option_ounce_gram"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Ounce to Gram"
+            android:text="@string/ounce_to_gram_option"
             android:textSize="20sp"/>
 
     </RadioGroup>
@@ -72,7 +73,7 @@
         android:id="@+id/convert_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Convert"
+        android:text="@string/conversion_button"
         android:layout_marginTop="70dp"
         app:layout_constraintTop_toBottomOf="@id/conversion_options"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -83,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
         android:layout_marginTop="70dp"
-        android:hint="Result of Conversion:"
+        android:hint="@string/conversion_result"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/convert_button" />

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Multi Converter</string>
+    <string name="unit_to_convert">Unit to Convert</string>
+    <string name="conversion_options_selection">Please pick the conversion of your choice.</string>
+    <string name="pound_to_kilogram_option">Pound to Kilogram</string>
+    <string name="foot_to_meter_option">Foot to Meter</string>
+    <string name="gallon_to_liter_option">Gallon to liter</string>
+    <string name="ounce_to_gram_option">Ounce to Gram</string>
+    <string name="conversion_button">Convert</string>
+    <string name="conversion_result">Result of Conversion:</string>
 </resources>
