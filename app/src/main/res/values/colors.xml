@@ -5,6 +5,12 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="olive_green">#7cb342</color>
+    <color name="olive_green_light">#aee571</color>
+    <color name="olive_green_dark">#4b830d</color>
+    <color name="olive_yellow">#afb42b</color>
+    <color name="olive_yellow_light">#e4e65e</color>
+    <color name="olive_yellow_dark">#7c8500</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

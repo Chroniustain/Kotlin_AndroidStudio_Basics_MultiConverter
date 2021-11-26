@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         val multiplier = when (binding.conversionOptions.checkedRadioButtonId) {
             R.id.option_pound_kilogram -> 0.453592
-            R.id.option_foot_meter -> 30.48
+            R.id.option_foot_meter -> 0.3048
             R.id.option_gallon_liter -> 3785.41
             else -> 28.3495
         }
