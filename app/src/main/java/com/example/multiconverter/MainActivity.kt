@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun convert(){
 
-        val stringInTextField = binding.unitToConvert.text.toString()
+        val stringInTextField = binding.unitToConvertEditText.text.toString()
         val unitToConvert = stringInTextField.toDoubleOrNull()
         if (unitToConvert == null || unitToConvert == 0.0) {
             binding.conversionResult.text = "0.0"
