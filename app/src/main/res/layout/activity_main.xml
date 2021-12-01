@@ -1,144 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent">
 
-    <ImageView
-        android:id="@+id/unit_to_convert_icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@+id/unit_to_convert"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/unit_to_convert"
-        app:srcCompat="@drawable/ic_baseline_unit_to_convert" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/unit_to_convert"
-        android:layout_width="210dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:hint="@string/unit_to_convert"
-        android:textColorHint="@color/olive_green_dark"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeColor="@color/olive_green_dark"
-        app:layout_constraintStart_toEndOf="@+id/unit_to_convert_icon"
-        app:layout_constraintTop_toTopOf="parent">
+        android:padding="16dp"
+        tools:context=".MainActivity">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/unit_to_convert_edit_text"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/unit_to_convert_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@+id/unit_to_convert"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/unit_to_convert"
+            app:srcCompat="@drawable/ic_baseline_unit_to_convert" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/unit_to_convert"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:hint="@string/unit_to_convert"
+            android:textColorHint="@color/olive_green_dark"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/olive_green_dark"
+            app:layout_constraintStart_toEndOf="@+id/unit_to_convert_icon"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/unit_to_convert_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:textAlignment="center"
+                android:textColor="@color/olive_green_dark"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/what_conversion_type_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@+id/conversion_options"
+            app:layout_constraintEnd_toEndOf="@+id/unit_to_convert_icon"
+            app:layout_constraintStart_toStartOf="@+id/unit_to_convert_icon"
+            app:layout_constraintTop_toTopOf="@+id/conversion_options"
+            app:srcCompat="@drawable/ic_conversion_options" />
+
+        <TextView
+            android:id="@+id/what_conversion_type"
+            style="@style/Widget.MultiConverter.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="@string/conversion_options_selection"
+            app:layout_constraintStart_toStartOf="@+id/unit_to_convert_icon"
+            app:layout_constraintTop_toBottomOf="@id/unit_to_convert" />
+
+        <RadioGroup
+            android:id="@+id/conversion_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="16dp"
+            android:checkedButton="@id/option_pound_kilogram"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/what_conversion_type_icon"
+            app:layout_constraintTop_toBottomOf="@id/what_conversion_type">
+
+            <RadioButton
+                android:id="@+id/option_pound_kilogram"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/pound_to_kilogram_option"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/option_foot_meter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/foot_to_meter_option"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/option_gallon_liter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/gallon_to_liter_option"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/option_ounce_gram"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/ounce_to_gram_option"
+                android:textSize="20sp" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/convert_button"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="@string/conversion_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/conversion_options" />
+
+        <ImageView
+            android:id="@+id/conversion_result_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@+id/conversion_result"
+            app:layout_constraintEnd_toEndOf="@+id/unit_to_convert_icon"
+            app:layout_constraintStart_toStartOf="@+id/unit_to_convert_icon"
+            app:layout_constraintTop_toTopOf="@+id/conversion_result"
+            app:srcCompat="@drawable/ic_outline_conversion_result" />
+
+        <TextView
+            android:id="@+id/conversion_result"
+            style="@style/Widget.MultiConverter.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:hint="@string/conversion_result"
             android:textAlignment="center"
             android:textColor="@color/olive_green_dark"
             android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/conversion_result_icon"
+            app:layout_constraintTop_toBottomOf="@id/convert_button" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/what_conversion_type_icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@+id/conversion_options"
-        app:layout_constraintEnd_toEndOf="@+id/unit_to_convert_icon"
-        app:layout_constraintStart_toStartOf="@+id/unit_to_convert_icon"
-        app:layout_constraintTop_toTopOf="@+id/conversion_options"
-        app:srcCompat="@drawable/ic_conversion_options" />
+</ScrollView>
 
-    <TextView
-        android:id="@+id/what_conversion_type"
-        style="@style/Widget.MultiConverter.TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:text="@string/conversion_options_selection"
-        app:layout_constraintStart_toStartOf="@+id/unit_to_convert_icon"
-        app:layout_constraintTop_toBottomOf="@id/unit_to_convert" />
 
-    <RadioGroup
-        android:id="@+id/conversion_options"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="16dp"
-        android:checkedButton="@id/option_pound_kilogram"
-        android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@id/what_conversion_type_icon"
-        app:layout_constraintTop_toBottomOf="@id/what_conversion_type">
-
-        <RadioButton
-            android:id="@+id/option_pound_kilogram"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/pound_to_kilogram_option"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/option_foot_meter"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/foot_to_meter_option"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/option_gallon_liter"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/gallon_to_liter_option"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/option_ounce_gram"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/ounce_to_gram_option"
-            android:textSize="20sp" />
-
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/convert_button"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:text="@string/conversion_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/conversion_options" />
-
-    <ImageView
-        android:id="@+id/conversion_result_icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@+id/conversion_result"
-        app:layout_constraintEnd_toEndOf="@+id/unit_to_convert_icon"
-        app:layout_constraintStart_toStartOf="@+id/unit_to_convert_icon"
-        app:layout_constraintTop_toTopOf="@+id/conversion_result"
-        app:srcCompat="@drawable/ic_outline_conversion_result" />
-
-    <TextView
-        android:id="@+id/conversion_result"
-        style="@style/Widget.MultiConverter.TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
-        android:hint="@string/conversion_result"
-        android:textAlignment="center"
-        android:textColor="@color/olive_green_dark"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/conversion_result_icon"
-        app:layout_constraintTop_toBottomOf="@id/convert_button" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
