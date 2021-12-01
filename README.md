@@ -4,6 +4,6 @@
 
 # Pound to Kilogram, Foot to Meter, Galon to liter and Ounce to Gram.
 
-# I am aiming to add more conversion types in the future. If you like, feel free to add some of the popular ones by yourself.
+# I am aiming to add more conversion types in the future.
 
 # If you like, feel free to add/contribute some of the popular ones by yourself.
