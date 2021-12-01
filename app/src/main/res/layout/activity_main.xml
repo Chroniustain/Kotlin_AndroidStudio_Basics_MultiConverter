@@ -7,17 +7,28 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/unit_to_convert_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/unit_to_convert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/unit_to_convert"
+        app:srcCompat="@drawable/ic_baseline_unit_to_convert" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/unit_to_convert"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
+        android:layout_marginStart= "16dp"
         android:hint="@string/unit_to_convert"
         android:textColorHint="@color/olive_green_dark"
         app:boxBackgroundMode="outline"
         app:boxStrokeColor="@color/olive_green_dark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/unit_to_convert_icon"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -32,32 +43,26 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
-<!--    <EditText-->
-<!--        android:id="@+id/unit_to_convert"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="90dp"-->
-<!--        android:layout_marginTop="60dp"-->
-<!--        android:autofillHints="insert a number"-->
-<!--        android:hint="@string/unit_to_convert"-->
-<!--        android:inputType="numberDecimal"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textColor="@color/olive_green_light"-->
-<!--        android:textSize="30sp"-->
-<!--        android:textStyle="bold"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <ImageView
+        android:id="@+id/what_conversion_type_icon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/what_conversion_type"
+        app:layout_constraintEnd_toEndOf="@+id/unit_to_convert_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/what_conversion_type"
+        app:srcCompat="@drawable/ic_conversion_options" />
 
     <TextView
         android:id="@+id/what_conversion_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/conversion_options_selection"
+        android:layout_marginStart= "16dp"
         android:layout_marginTop="70dp"
-        android:layout_marginStart="1dp"
         app:layout_constraintTop_toBottomOf="@id/unit_to_convert"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toEndOf="@id/what_conversion_type_icon"/>
 
     <RadioGroup
         android:id="@+id/conversion_options"
@@ -66,8 +71,8 @@
         android:layout_marginTop="20dp"
         android:checkedButton="@id/option_pound_kilogram"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="@id/what_conversion_type"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="@+id/what_conversion_type"
+        app:layout_constraintTop_toBottomOf="@id/what_conversion_type">
 
         <RadioButton
             android:id="@+id/option_pound_kilogram"
@@ -88,38 +93,50 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/gallon_to_liter_option"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/option_ounce_gram"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/ounce_to_gram_option"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
     </RadioGroup>
 
     <Button
         android:id="@+id/convert_button"
-        android:layout_width="match_parent"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:text="@string/conversion_button"
         android:layout_marginTop="70dp"
-        app:layout_constraintTop_toBottomOf="@id/conversion_options"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:text="@string/conversion_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/conversion_options" />
+
+    <ImageView
+        android:id="@+id/conversion_result_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/conversion_result"
+        app:layout_constraintEnd_toEndOf="@+id/unit_to_convert_icon"
+        app:layout_constraintStart_toStartOf="@+id/unit_to_convert_icon"
+        app:layout_constraintTop_toTopOf="@+id/conversion_result"
+        app:srcCompat="@drawable/ic_outline_conversion_result" />
 
     <TextView
         android:id="@+id/conversion_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="60dp"
         android:hint="@string/conversion_result"
         android:textAlignment="center"
         android:textColor="@color/olive_green_dark"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/conversion_result_icon"
         app:layout_constraintTop_toBottomOf="@id/convert_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
